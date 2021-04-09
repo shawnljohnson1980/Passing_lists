@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Student Register</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for ('static', filename= 'bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for ('static', filename= 'NavigationClean.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for ('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <nav class=" navbar navbar-light navbar-expand-md bg-info shadow navigation-clean">
+        <div class="container"><a class="navbar-brand" href="#">Student Register</a><button data-toggle="collapse"
+                class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"></li>
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false"
+                            data-toggle="dropdown" href="#">Dropdown </a>
+                        <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a
+                                class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third
+                                Item</a></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <div class="jumbotron ">
+            <h1>Current Student List&nbsp;</h1>
+            <p></p>
+            <p></p>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="table-info">Name</th>
+                            <th class="table-info">Age</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for student in students %}
+                        <tr>
+                            <td class="table-primary">{{ student.name }}</td>
+                            <td class="table-primary">{{ student.age }}</td>
+                        </tr>
+                        {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for ('static', filename='jquery.min.js') }}"></script>
+    <script src="{{ url_for ('static', filename='bootstrap.min.js') }}"></script>
+</body>
+
+</html>
